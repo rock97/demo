@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+    <generatorConfiguration>
+        <classPathEntry
+                location="/Users/lizhihuamobike/Documents/mysql-connector-java-5.1.4.jar"/>
+        <context id="my" targetRuntime="MyBatis3">
+            <commentGenerator>
+                <property name="suppressDate" value="false"/>
+                <property name="suppressAllComments" value="true"/>
+            </commentGenerator>
+
+            <jdbcConnection driverClass="com.mysql.jdbc.Driver"
+                            connectionURL="jdbc:mysql://mysql.dev1.mobike.io:3306/mbk_mola_basic"
+                            userId="mobike001"
+                            password="m0bike123"/>
+
+            <javaModelGenerator targetPackage="ctas.test.entity"
+                                targetProject="/Users/lizhihuamobike/java/spring-boot-demo/demo/src/main/java">
+                <property name="enableSubPackages" value="true"/>
+                <property name="trimStrings" value="true"/>
+            </javaModelGenerator>
+
+            <sqlMapGenerator targetPackage="ctas.test.entity.xml"
+                             targetProject="/Users/lizhihuamobike/java/spring-boot-demo/demo/src/main/java">
+                <property name="enableSubPackages" value="true"/>
+            </sqlMapGenerator>
+
+            <javaClientGenerator targetPackage="ctas.test.mapper"
+                                 targetProject="/Users/lizhihuamobike/java/spring-boot-demo/demo/src/main/java" type="XMLMAPPER">
+                <property name="enableSubPackages" value="true"/>
+            </javaClientGenerator>
+
+            <table tableName="mbk_hardware_development" domainObjectName="HardwareDevelopment"
+            />
+            <table tableName="mbk_hardware_development_ approve_log" domainObjectName="HardwareDevelopmentApproveLog"
+            />
+
+
+        </context>
+    </generatorConfiguration>

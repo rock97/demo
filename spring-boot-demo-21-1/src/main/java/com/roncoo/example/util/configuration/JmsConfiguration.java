@@ -8,16 +8,16 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * jms 队列配置
- * 
+ *
  * @author wujing
  */
 @Configuration
 public class JmsConfiguration {
 
-	@Bean
-	public Queue queue() {
-		return new ActiveMQQueue("roncoo.queue");
-	}
+    @Bean
+    public Queue queue() {
+        return new ActiveMQQueue("roncoo.queue");
+    }
 
 }
 

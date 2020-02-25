@@ -11,16 +11,16 @@ import com.roncoo.example.service.UserService;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootDemo151ApplicationTests {
-	
-	
-	@Autowired
-	private UserService userService;
 
-	@Test
-	public void register() {
-		String result = userService.register("无境", "192.168.1.1");
-		System.out.println(result);
-	}
+
+    @Autowired
+    private UserService userService;
+
+    @Test
+    public void register() {
+        String result = userService.register("无境", "192.168.1.1");
+        System.out.println(result);
+    }
 
 
 }

@@ -14,11 +14,11 @@ import com.roncoo.education.mapper.RoncooUserMapper;
 @RequestMapping("/api")
 public class ApiController {
 
-	@Autowired
-	private RoncooUserMapper roncooUserMappper;
+    @Autowired
+    private RoncooUserMapper roncooUserMappper;
 
-	@RequestMapping(value = "/select", method = RequestMethod.GET)
-	public RoncooUser get(@RequestParam(defaultValue = "1") Integer id) {
-		return roncooUserMappper.selectByPrimaryKey(id);
-	}
+    @RequestMapping(value = "/select", method = RequestMethod.GET)
+    public RoncooUser get(@RequestParam(defaultValue = "1") Integer id) {
+        return roncooUserMappper.selectByPrimaryKey(id);
+    }
 }

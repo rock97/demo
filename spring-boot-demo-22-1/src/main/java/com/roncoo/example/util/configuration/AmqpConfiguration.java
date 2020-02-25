@@ -7,15 +7,15 @@ import org.springframework.context.annotation.Configuration;
 
 /**
  * amqp 队列配置
- * 
+ *
  * @author wujing
  */
 @Configuration
 public class AmqpConfiguration {
 
-	@Bean
-	public Queue queue() {
-		return new Queue("roncoo.queue");
-	}
+    @Bean
+    public Queue queue() {
+        return new Queue("roncoo.queue");
+    }
 
 }

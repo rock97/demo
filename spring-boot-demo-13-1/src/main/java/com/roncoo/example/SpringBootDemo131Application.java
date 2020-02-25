@@ -8,7 +8,7 @@ import org.springframework.boot.web.servlet.ServletComponentScan;
 @SpringBootApplication
 public class SpringBootDemo131Application {
 
-	public static void main(String[] args) {
-		SpringApplication.run(SpringBootDemo131Application.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(SpringBootDemo131Application.class, args);
+    }
 }

@@ -15,22 +15,22 @@ import com.roncoo.education.mapper.RoncooUserMapper;
 @SpringBootTest
 public class SpringBootDemo291ApplicationTests {
 
-	@Autowired
-	private RoncooUserMapper mapper;
+    @Autowired
+    private RoncooUserMapper mapper;
 
-	@Test
-	public void insert() {
-		RoncooUser roncooUser = new RoncooUser();
-		roncooUser.setName("测试");
-		roncooUser.setCreateTime(new Date());
-		int result = mapper.insert(roncooUser);
-		System.out.println(result);
-	}
-	
-	@Test
-	public void select() {
-		RoncooUser result = mapper.selectByPrimaryKey(2);
-		System.out.println(result);
-	}
+    @Test
+    public void insert() {
+        RoncooUser roncooUser = new RoncooUser();
+        roncooUser.setName("测试");
+        roncooUser.setCreateTime(new Date());
+        int result = mapper.insert(roncooUser);
+        System.out.println(result);
+    }
+
+    @Test
+    public void select() {
+        RoncooUser result = mapper.selectByPrimaryKey(2);
+        System.out.println(result);
+    }
 
 }

@@ -16,45 +16,45 @@ import org.springframework.web.multipart.MultipartFile;
 @RequestMapping(value = "/file")
 public class FileController {
 
-	private static final Logger logger = LoggerFactory.getLogger(FileController.class);
+    private static final Logger logger = LoggerFactory.getLogger(FileController.class);
 
-	@RequestMapping(value = "upload")
-	@ResponseBody
-	public String upload(@RequestParam("roncooFile") MultipartFile file) {
-		if (file.isEmpty()) {
-			return "文件为空";
-		}
+    @RequestMapping(value = "upload")
+    @ResponseBody
+    public String upload(@RequestParam("roncooFile") MultipartFile file) {
+        if (file.isEmpty()) {
+            return "文件为空";
+        }
 
-		// 获取文件名
-		String fileName = file.getOriginalFilename();
-		logger.info("上传的文件名为：" + fileName);
+        // 获取文件名
+        String fileName = file.getOriginalFilename();
+        logger.info("上传的文件名为：" + fileName);
 
-		// 获取文件的后缀名
-		String suffixName = fileName.substring(fileName.lastIndexOf("."));
-		logger.info("上传的后缀名为：" + suffixName);
+        // 获取文件的后缀名
+        String suffixName = fileName.substring(fileName.lastIndexOf("."));
+        logger.info("上传的后缀名为：" + suffixName);
 
-		// 文件上传路径
-		String filePath = "d:/roncoo/education/";
+        // 文件上传路径
+        String filePath = "d:/roncoo/education/";
 
-		// 解决中文问题，liunx下中文路径，图片显示问题
-		fileName = UUID.randomUUID() + suffixName;
-		
-		File dest = new File(filePath + fileName);
+        // 解决中文问题，liunx下中文路径，图片显示问题
+        fileName = UUID.randomUUID() + suffixName;
 
-		// 检测是否存在目录
-		if (!dest.getParentFile().exists()) {
-			dest.getParentFile().mkdirs();
-		}
+        File dest = new File(filePath + fileName);
 
-		try {
-			file.transferTo(dest);
-			return "上传成功";
-		} catch (IllegalStateException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return "上传失败";
-	}
+        // 检测是否存在目录
+        if (!dest.getParentFile().exists()) {
+            dest.getParentFile().mkdirs();
+        }
+
+        try {
+            file.transferTo(dest);
+            return "上传成功";
+        } catch (IllegalStateException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "上传失败";
+    }
 
 }

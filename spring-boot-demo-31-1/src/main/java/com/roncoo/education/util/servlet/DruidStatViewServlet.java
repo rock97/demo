@@ -6,13 +6,12 @@ import javax.servlet.annotation.WebServlet;
 import com.alibaba.druid.support.http.StatViewServlet;
 
 /**
- *
  * @author wujing
  */
-@WebServlet(urlPatterns = { "/druid/*" }, initParams = { @WebInitParam(name = "loginUsername", value = "roncoo"), @WebInitParam(name = "loginPassword", value = "roncoo") })
+@WebServlet(urlPatterns = {"/druid/*"}, initParams = {@WebInitParam(name = "loginUsername", value = "roncoo"), @WebInitParam(name = "loginPassword", value = "roncoo")})
 public class DruidStatViewServlet extends StatViewServlet {
 
-	private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 
 }
 

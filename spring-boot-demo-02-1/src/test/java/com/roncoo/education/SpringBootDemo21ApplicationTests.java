@@ -19,20 +19,20 @@ import com.roncoo.education.controller.IndexController;
 @SpringBootTest
 public class SpringBootDemo21ApplicationTests {
 
-	private MockMvc mvc;
+    private MockMvc mvc;
 
-	@Before
-	public void setup() {
-		this.mvc = MockMvcBuilders.standaloneSetup(new IndexController()).build();
-	}
+    @Before
+    public void setup() {
+        this.mvc = MockMvcBuilders.standaloneSetup(new IndexController()).build();
+    }
 
-	@Test
-	public void contextLoads() throws Exception {
-		RequestBuilder request = get("/index");
-		mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("hello world"));
-		
-		request = get("/index/get").param("name", "无境");
-		mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("{\"name\":\"无境\",\"title\":\"hello world\"}"));
-	}
+    @Test
+    public void contextLoads() throws Exception {
+        RequestBuilder request = get("/index");
+        mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("hello world"));
+
+        request = get("/index/get").param("name", "无境");
+        mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("{\"name\":\"无境\",\"title\":\"hello world\"}"));
+    }
 
 }

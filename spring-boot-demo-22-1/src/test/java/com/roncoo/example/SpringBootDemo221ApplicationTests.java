@@ -11,14 +11,13 @@ import com.roncoo.example.component.RoncooAmqpComponent;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class SpringBootDemo221ApplicationTests {
-	@Autowired
-	private RoncooAmqpComponent roncooAmqpComponent;
+    @Autowired
+    private RoncooAmqpComponent roncooAmqpComponent;
 
-	@Test
-	public void send() {
-		roncooAmqpComponent.send("hello world2");
-	}
-
+    @Test
+    public void send() {
+        roncooAmqpComponent.send("hello world2");
+    }
 
 
 }

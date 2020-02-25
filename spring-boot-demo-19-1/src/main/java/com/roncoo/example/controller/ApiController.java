@@ -16,36 +16,36 @@ import com.roncoo.example.cache.RoncooUserLogCache;
 @RestController
 @RequestMapping("/api")
 public class ApiController {
-	
-	@Autowired
-	private RoncooUserLogCache roncooUserLogCache;
 
-	@CrossOrigin(origins = "http://localhost:8080")
-	@RequestMapping(value = "/get", method = RequestMethod.POST)
-	public HashMap<String, Object> get(@RequestParam String name) {
-		HashMap<String, Object> map = new HashMap<String, Object>();
-		map.put("title", "hello world");
-		map.put("name", name);
-		return map;
-	}
-	
-	@RequestMapping(value = "/select", method = RequestMethod.GET)
-	public RoncooUserLog get(@RequestParam(defaultValue = "1") Integer id) {
-		return roncooUserLogCache.selectById(id);
-	}
+    @Autowired
+    private RoncooUserLogCache roncooUserLogCache;
 
-	@RequestMapping(value = "/update", method = RequestMethod.GET)
-	public RoncooUserLog update(@RequestParam(defaultValue = "1") Integer id) {
-		RoncooUserLog bean = roncooUserLogCache.selectById(id);
-		bean.setUserName("测试");
-		bean.setCreateTime(new Date());
-		roncooUserLogCache.updateById(bean);
-		return bean;
-	}
+    @CrossOrigin(origins = "http://localhost:8080")
+    @RequestMapping(value = "/get", method = RequestMethod.POST)
+    public HashMap<String, Object> get(@RequestParam String name) {
+        HashMap<String, Object> map = new HashMap<String, Object>();
+        map.put("title", "hello world");
+        map.put("name", name);
+        return map;
+    }
 
-	@RequestMapping(value = "/del", method = RequestMethod.GET)
-	public String del(@RequestParam(defaultValue = "1") Integer id) {
-		return roncooUserLogCache.deleteById(id);
-	}
+    @RequestMapping(value = "/select", method = RequestMethod.GET)
+    public RoncooUserLog get(@RequestParam(defaultValue = "1") Integer id) {
+        return roncooUserLogCache.selectById(id);
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.GET)
+    public RoncooUserLog update(@RequestParam(defaultValue = "1") Integer id) {
+        RoncooUserLog bean = roncooUserLogCache.selectById(id);
+        bean.setUserName("测试");
+        bean.setCreateTime(new Date());
+        roncooUserLogCache.updateById(bean);
+        return bean;
+    }
+
+    @RequestMapping(value = "/del", method = RequestMethod.GET)
+    public String del(@RequestParam(defaultValue = "1") Integer id) {
+        return roncooUserLogCache.deleteById(id);
+    }
 
 }

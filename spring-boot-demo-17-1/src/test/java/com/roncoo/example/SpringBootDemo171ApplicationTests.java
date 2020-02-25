@@ -12,22 +12,22 @@ import com.roncoo.example.component.RoncooRedisComponent;
 @SpringBootTest
 public class SpringBootDemo171ApplicationTests {
 
-	@Autowired
-	private RoncooRedisComponent roncooRedisComponent;
+    @Autowired
+    private RoncooRedisComponent roncooRedisComponent;
 
-	@Test
-	public void set() {
-		roncooRedisComponent.set("roncoo1", "hello world");
-	}
+    @Test
+    public void set() {
+        roncooRedisComponent.set("roncoo1", "hello world");
+    }
 
-	@Test
-	public void get() {
-		System.out.println(roncooRedisComponent.get("roncoo"));
-	}
+    @Test
+    public void get() {
+        System.out.println(roncooRedisComponent.get("roncoo"));
+    }
 
-	@Test
-	public void del() {
-		roncooRedisComponent.del("roncoo1");
-	}
+    @Test
+    public void del() {
+        roncooRedisComponent.del("roncoo1");
+    }
 
 }

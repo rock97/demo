@@ -17,18 +17,18 @@ import springfox.documentation.annotations.ApiIgnore;
 @RequestMapping("/api")
 public class ApiController {
 
-	@Autowired
-	private RoncooUserMapper roncooUserMappper;
+    @Autowired
+    private RoncooUserMapper roncooUserMappper;
 
-	@ApiOperation(value = "查找", notes = "根据用户ID查找用户")
-	@RequestMapping(value = "/select", method = RequestMethod.GET)
-	public RoncooUser get(@RequestParam(defaultValue = "1") Integer id) {
-		return roncooUserMappper.selectByPrimaryKey(id);
-	}
-	
-	@ApiIgnore
-	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public int delete(@RequestParam(defaultValue = "1") Integer id) {
-		return roncooUserMappper.deleteByPrimaryKey(id);
-	}
+    @ApiOperation(value = "查找", notes = "根据用户ID查找用户")
+    @RequestMapping(value = "/select", method = RequestMethod.GET)
+    public RoncooUser get(@RequestParam(defaultValue = "1") Integer id) {
+        return roncooUserMappper.selectByPrimaryKey(id);
+    }
+
+    @ApiIgnore
+    @RequestMapping(value = "/delete", method = RequestMethod.GET)
+    public int delete(@RequestParam(defaultValue = "1") Integer id) {
+        return roncooUserMappper.deleteByPrimaryKey(id);
+    }
 }

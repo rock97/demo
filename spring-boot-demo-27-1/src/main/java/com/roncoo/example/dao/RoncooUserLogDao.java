@@ -7,12 +7,12 @@ import org.springframework.data.jpa.repository.Query;
 
 import com.roncoo.example.bean.RoncooUserLog;
 
-public interface RoncooUserLogDao extends JpaRepository<RoncooUserLog, Integer>{
+public interface RoncooUserLogDao extends JpaRepository<RoncooUserLog, Integer> {
 
-	@Query(value="select u from RoncooUserLog u where u.userName=?1")
-	RoncooUserLog findByUserName(String string);
-	
-	RoncooUserLog findByUserNameAndUserIp(String string, String ip);
+    @Query(value = "select u from RoncooUserLog u where u.userName=?1")
+    RoncooUserLog findByUserName(String string);
 
-	Page<RoncooUserLog> findByUserName(String string, Pageable pageable);
+    RoncooUserLog findByUserNameAndUserIp(String string, String ip);
+
+    Page<RoncooUserLog> findByUserName(String string, Pageable pageable);
 }
