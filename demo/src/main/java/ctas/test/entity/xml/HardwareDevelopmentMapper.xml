@@ -1,106 +1,519 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="ctas.test.mapper.HardwareDevelopmentMapper" >
-  <resultMap id="BaseResultMap" type="ctas.test.entity.HardwareDevelopment" >
-    <id column="id" property="id" jdbcType="INTEGER" />
-    <result column="apply_no" property="applyNo" jdbcType="VARCHAR" />
-    <result column="apply_type" property="applyType" jdbcType="VARCHAR" />
-    <result column="status" property="status" jdbcType="INTEGER" />
-    <result column="legal_person_company" property="legalPersonCompany" jdbcType="VARCHAR" />
-    <result column="product_type" property="productType" jdbcType="VARCHAR" />
-    <result column="product_no_change" property="productNoChange" jdbcType="VARCHAR" />
-    <result column="product_no_change_after" property="productNoChangeAfter" jdbcType="VARCHAR" />
-    <result column="product_arrive_time" property="productArriveTime" jdbcType="DATE" />
-    <result column="product_number" property="productNumber" jdbcType="INTEGER" />
-    <result column="product_change_type" property="productChangeType" jdbcType="VARCHAR" />
-    <result column="import_type" property="importType" jdbcType="VARCHAR" />
-    <result column="import_describe" property="importDescribe" jdbcType="VARCHAR" />
-    <result column="timing_import_date" property="timingImportDate" jdbcType="DATE" />
-    <result column="cost_affect" property="costAffect" jdbcType="VARCHAR" />
-    <result column="deadline_affect" property="deadlineAffect" jdbcType="VARCHAR" />
-    <result column="project_affect" property="projectAffect" jdbcType="VARCHAR" />
-    <result column="detailed_requirement_describe" property="detailedRequirementDescribe" jdbcType="VARCHAR" />
-    <result column="change_reason" property="changeReason" jdbcType="VARCHAR" />
-    <result column="change_type" property="changeType" jdbcType="VARCHAR" />
-    <result column="change_type_other_describe" property="changeTypeOtherDescribe" jdbcType="VARCHAR" />
-    <result column="change_purview" property="changePurview" jdbcType="VARCHAR" />
-    <result column="change_purview_other_describe" property="changePurviewOtherDescribe" jdbcType="VARCHAR" />
-    <result column="involve_department" property="involveDepartment" jdbcType="VARCHAR" />
-    <result column="involve_department_other_describe" property="involveDepartmentOtherDescribe" jdbcType="VARCHAR" />
-    <result column="change_describe" property="changeDescribe" jdbcType="VARCHAR" />
-    <result column="change_describe_after" property="changeDescribeAfter" jdbcType="VARCHAR" />
-    <result column="commit_time" property="commitTime" jdbcType="DATE" />
-    <result column="create_time" property="createTime" jdbcType="DATE" />
-    <result column="create_user" property="createUser" jdbcType="VARCHAR" />
-    <result column="create_user_mis" property="createUserMis" jdbcType="VARCHAR" />
-    <result column="update_time" property="updateTime" jdbcType="DATE" />
-    <result column="update_user" property="updateUser" jdbcType="VARCHAR" />
-    <result column="remark" property="remark" jdbcType="VARCHAR" />
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="ctas.test.mapper.HardwareDevelopmentMapper">
+  <resultMap id="BaseResultMap" type="ctas.test.entity.HardwareDevelopment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="apply_type" jdbcType="VARCHAR" property="applyType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="legal_person_company" jdbcType="VARCHAR" property="legalPersonCompany" />
+    <result column="product_type" jdbcType="VARCHAR" property="productType" />
+    <result column="product_no_change" jdbcType="VARCHAR" property="productNoChange" />
+    <result column="product_no_change_after" jdbcType="VARCHAR" property="productNoChangeAfter" />
+    <result column="product_arrive_time" jdbcType="DATE" property="productArriveTime" />
+    <result column="product_number" jdbcType="INTEGER" property="productNumber" />
+    <result column="product_change_type" jdbcType="VARCHAR" property="productChangeType" />
+    <result column="import_type" jdbcType="VARCHAR" property="importType" />
+    <result column="import_describe" jdbcType="VARCHAR" property="importDescribe" />
+    <result column="timing_import_date" jdbcType="DATE" property="timingImportDate" />
+    <result column="cost_affect" jdbcType="VARCHAR" property="costAffect" />
+    <result column="deadline_affect" jdbcType="VARCHAR" property="deadlineAffect" />
+    <result column="project_affect" jdbcType="VARCHAR" property="projectAffect" />
+    <result column="detailed_requirement_describe" jdbcType="VARCHAR" property="detailedRequirementDescribe" />
+    <result column="change_reason" jdbcType="VARCHAR" property="changeReason" />
+    <result column="change_type" jdbcType="VARCHAR" property="changeType" />
+    <result column="change_type_other_describe" jdbcType="VARCHAR" property="changeTypeOtherDescribe" />
+    <result column="change_purview" jdbcType="VARCHAR" property="changePurview" />
+    <result column="change_purview_other_describe" jdbcType="VARCHAR" property="changePurviewOtherDescribe" />
+    <result column="involve_department" jdbcType="VARCHAR" property="involveDepartment" />
+    <result column="involve_department_other_describe" jdbcType="VARCHAR" property="involveDepartmentOtherDescribe" />
+    <result column="change_file" jdbcType="VARCHAR" property="changeFile" />
+    <result column="change_describe" jdbcType="VARCHAR" property="changeDescribe" />
+    <result column="change_file_after" jdbcType="VARCHAR" property="changeFileAfter" />
+    <result column="change_describe_after" jdbcType="VARCHAR" property="changeDescribeAfter" />
+    <result column="file" jdbcType="VARCHAR" property="file" />
+    <result column="commit_time" jdbcType="DATE" property="commitTime" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_user_mis" jdbcType="VARCHAR" property="createUserMis" />
+    <result column="update_time" jdbcType="DATE" property="updateTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
-  <resultMap id="ResultMapWithBLOBs" type="ctas.test.entity.HardwareDevelopmentWithBLOBs" extends="BaseResultMap" >
-    <result column="change_file" property="changeFile" jdbcType="LONGVARCHAR" />
-    <result column="change_file_after" property="changeFileAfter" jdbcType="LONGVARCHAR" />
-    <result column="file" property="file" jdbcType="LONGVARCHAR" />
+  <sql id="Base_Column_List">
+    id, apply_no, apply_type, status, legal_person_company, product_type, product_no_change, 
+    product_no_change_after, product_arrive_time, product_number, product_change_type, 
+    import_type, import_describe, timing_import_date, cost_affect, deadline_affect, project_affect, 
+    detailed_requirement_describe, change_reason, change_type, change_type_other_describe, 
+    change_purview, change_purview_other_describe, involve_department, involve_department_other_describe, 
+    change_file, change_describe, change_file_after, change_describe_after, file, commit_time, 
+    create_time, create_user, create_user_mis, update_time, update_user, remark
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select 
+    <include refid="Base_Column_List" />
+    from mbk_hardware_development
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mbk_hardware_development
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="ctas.test.entity.HardwareDevelopment">
+    insert into mbk_hardware_development (id, apply_no, apply_type, 
+      status, legal_person_company, product_type, 
+      product_no_change, product_no_change_after, 
+      product_arrive_time, product_number, product_change_type, 
+      import_type, import_describe, timing_import_date, 
+      cost_affect, deadline_affect, project_affect, 
+      detailed_requirement_describe, change_reason, 
+      change_type, change_type_other_describe, change_purview, 
+      change_purview_other_describe, involve_department, 
+      involve_department_other_describe, change_file, 
+      change_describe, change_file_after, change_describe_after, 
+      file, commit_time, create_time, 
+      create_user, create_user_mis, update_time, 
+      update_user, remark)
+    values (#{id,jdbcType=INTEGER}, #{applyNo,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{legalPersonCompany,jdbcType=VARCHAR}, #{productType,jdbcType=VARCHAR}, 
+      #{productNoChange,jdbcType=VARCHAR}, #{productNoChangeAfter,jdbcType=VARCHAR}, 
+      #{productArriveTime,jdbcType=DATE}, #{productNumber,jdbcType=INTEGER}, #{productChangeType,jdbcType=VARCHAR}, 
+      #{importType,jdbcType=VARCHAR}, #{importDescribe,jdbcType=VARCHAR}, #{timingImportDate,jdbcType=DATE}, 
+      #{costAffect,jdbcType=VARCHAR}, #{deadlineAffect,jdbcType=VARCHAR}, #{projectAffect,jdbcType=VARCHAR}, 
+      #{detailedRequirementDescribe,jdbcType=VARCHAR}, #{changeReason,jdbcType=VARCHAR}, 
+      #{changeType,jdbcType=VARCHAR}, #{changeTypeOtherDescribe,jdbcType=VARCHAR}, #{changePurview,jdbcType=VARCHAR}, 
+      #{changePurviewOtherDescribe,jdbcType=VARCHAR}, #{involveDepartment,jdbcType=VARCHAR}, 
+      #{involveDepartmentOtherDescribe,jdbcType=VARCHAR}, #{changeFile,jdbcType=VARCHAR}, 
+      #{changeDescribe,jdbcType=VARCHAR}, #{changeFileAfter,jdbcType=VARCHAR}, #{changeDescribeAfter,jdbcType=VARCHAR}, 
+      #{file,jdbcType=VARCHAR}, #{commitTime,jdbcType=DATE}, #{createTime,jdbcType=DATE}, 
+      #{createUser,jdbcType=VARCHAR}, #{createUserMis,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, 
+      #{updateUser,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="ctas.test.entity.HardwareDevelopment">
+    insert into mbk_hardware_development
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="applyType != null">
+        apply_type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="legalPersonCompany != null">
+        legal_person_company,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="productNoChange != null">
+        product_no_change,
+      </if>
+      <if test="productNoChangeAfter != null">
+        product_no_change_after,
+      </if>
+      <if test="productArriveTime != null">
+        product_arrive_time,
+      </if>
+      <if test="productNumber != null">
+        product_number,
+      </if>
+      <if test="productChangeType != null">
+        product_change_type,
+      </if>
+      <if test="importType != null">
+        import_type,
+      </if>
+      <if test="importDescribe != null">
+        import_describe,
+      </if>
+      <if test="timingImportDate != null">
+        timing_import_date,
+      </if>
+      <if test="costAffect != null">
+        cost_affect,
+      </if>
+      <if test="deadlineAffect != null">
+        deadline_affect,
+      </if>
+      <if test="projectAffect != null">
+        project_affect,
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        detailed_requirement_describe,
+      </if>
+      <if test="changeReason != null">
+        change_reason,
+      </if>
+      <if test="changeType != null">
+        change_type,
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        change_type_other_describe,
+      </if>
+      <if test="changePurview != null">
+        change_purview,
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        change_purview_other_describe,
+      </if>
+      <if test="involveDepartment != null">
+        involve_department,
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        involve_department_other_describe,
+      </if>
+      <if test="changeFile != null">
+        change_file,
+      </if>
+      <if test="changeDescribe != null">
+        change_describe,
+      </if>
+      <if test="changeFileAfter != null">
+        change_file_after,
+      </if>
+      <if test="changeDescribeAfter != null">
+        change_describe_after,
+      </if>
+      <if test="file != null">
+        file,
+      </if>
+      <if test="commitTime != null">
+        commit_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createUserMis != null">
+        create_user_mis,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="legalPersonCompany != null">
+        #{legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChange != null">
+        #{productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChangeAfter != null">
+        #{productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="productArriveTime != null">
+        #{productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="productNumber != null">
+        #{productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="productChangeType != null">
+        #{productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null">
+        #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="importDescribe != null">
+        #{importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="timingImportDate != null">
+        #{timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="costAffect != null">
+        #{costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="deadlineAffect != null">
+        #{deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="projectAffect != null">
+        #{projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeReason != null">
+        #{changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurview != null">
+        #{changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartment != null">
+        #{involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFile != null">
+        #{changeFile,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribe != null">
+        #{changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFileAfter != null">
+        #{changeFileAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribeAfter != null">
+        #{changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="commitTime != null">
+        #{commitTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserMis != null">
+        #{createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="ctas.test.entity.HardwareDevelopment">
+    update mbk_hardware_development
+    <set>
+      <if test="applyNo != null">
+        apply_no = #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        apply_type = #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="legalPersonCompany != null">
+        legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChange != null">
+        product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChangeAfter != null">
+        product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="productArriveTime != null">
+        product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="productNumber != null">
+        product_number = #{productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="productChangeType != null">
+        product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null">
+        import_type = #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="importDescribe != null">
+        import_describe = #{importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="timingImportDate != null">
+        timing_import_date = #{timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="costAffect != null">
+        cost_affect = #{costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="deadlineAffect != null">
+        deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="projectAffect != null">
+        project_affect = #{projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeReason != null">
+        change_reason = #{changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        change_type = #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurview != null">
+        change_purview = #{changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartment != null">
+        involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFile != null">
+        change_file = #{changeFile,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribe != null">
+        change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFileAfter != null">
+        change_file_after = #{changeFileAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribeAfter != null">
+        change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="file != null">
+        file = #{file,jdbcType=VARCHAR},
+      </if>
+      <if test="commitTime != null">
+        commit_time = #{commitTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserMis != null">
+        create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="ctas.test.entity.HardwareDevelopment">
+    update mbk_hardware_development
+    set apply_no = #{applyNo,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=VARCHAR},
+      product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      product_number = #{productNumber,jdbcType=INTEGER},
+      product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      import_type = #{importType,jdbcType=VARCHAR},
+      import_describe = #{importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{timingImportDate,jdbcType=DATE},
+      cost_affect = #{costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{changeReason,jdbcType=VARCHAR},
+      change_type = #{changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_file = #{changeFile,jdbcType=VARCHAR},
+      change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      change_file_after = #{changeFileAfter,jdbcType=VARCHAR},
+      change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      file = #{file,jdbcType=VARCHAR},
+      commit_time = #{commitTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=DATE},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="ctas.test.entity.HardwareDevelopment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="apply_type" jdbcType="VARCHAR" property="applyType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="legal_person_company" jdbcType="VARCHAR" property="legalPersonCompany" />
+    <result column="product_type" jdbcType="VARCHAR" property="productType" />
+    <result column="product_no_change" jdbcType="VARCHAR" property="productNoChange" />
+    <result column="product_no_change_after" jdbcType="VARCHAR" property="productNoChangeAfter" />
+    <result column="product_arrive_time" jdbcType="DATE" property="productArriveTime" />
+    <result column="product_number" jdbcType="INTEGER" property="productNumber" />
+    <result column="product_change_type" jdbcType="VARCHAR" property="productChangeType" />
+    <result column="import_type" jdbcType="VARCHAR" property="importType" />
+    <result column="import_describe" jdbcType="VARCHAR" property="importDescribe" />
+    <result column="timing_import_date" jdbcType="DATE" property="timingImportDate" />
+    <result column="cost_affect" jdbcType="VARCHAR" property="costAffect" />
+    <result column="deadline_affect" jdbcType="VARCHAR" property="deadlineAffect" />
+    <result column="project_affect" jdbcType="VARCHAR" property="projectAffect" />
+    <result column="detailed_requirement_describe" jdbcType="VARCHAR" property="detailedRequirementDescribe" />
+    <result column="change_reason" jdbcType="VARCHAR" property="changeReason" />
+    <result column="change_type" jdbcType="VARCHAR" property="changeType" />
+    <result column="change_type_other_describe" jdbcType="VARCHAR" property="changeTypeOtherDescribe" />
+    <result column="change_purview" jdbcType="VARCHAR" property="changePurview" />
+    <result column="change_purview_other_describe" jdbcType="VARCHAR" property="changePurviewOtherDescribe" />
+    <result column="involve_department" jdbcType="VARCHAR" property="involveDepartment" />
+    <result column="involve_department_other_describe" jdbcType="VARCHAR" property="involveDepartmentOtherDescribe" />
+    <result column="change_describe" jdbcType="VARCHAR" property="changeDescribe" />
+    <result column="change_describe_after" jdbcType="VARCHAR" property="changeDescribeAfter" />
+    <result column="commit_time" jdbcType="DATE" property="commitTime" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_user_mis" jdbcType="VARCHAR" property="createUserMis" />
+    <result column="update_time" jdbcType="DATE" property="updateTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
   </resultMap>
-  <sql id="Example_Where_Clause" >
-    <where >
-      <foreach collection="oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Update_By_Example_Where_Clause" >
-    <where >
-      <foreach collection="example.oredCriteria" item="criteria" separator="or" >
-        <if test="criteria.valid" >
-          <trim prefix="(" suffix=")" prefixOverrides="and" >
-            <foreach collection="criteria.criteria" item="criterion" >
-              <choose >
-                <when test="criterion.noValue" >
-                  and ${criterion.condition}
-                </when>
-                <when test="criterion.singleValue" >
-                  and ${criterion.condition} #{criterion.value}
-                </when>
-                <when test="criterion.betweenValue" >
-                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
-                </when>
-                <when test="criterion.listValue" >
-                  and ${criterion.condition}
-                  <foreach collection="criterion.value" item="listItem" open="(" close=")" separator="," >
-                    #{listItem}
-                  </foreach>
-                </when>
-              </choose>
-            </foreach>
-          </trim>
-        </if>
-      </foreach>
-    </where>
-  </sql>
-  <sql id="Base_Column_List" >
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    <result column="change_file" jdbcType="LONGVARCHAR" property="changeFile" />
+    <result column="change_file_after" jdbcType="LONGVARCHAR" property="changeFileAfter" />
+    <result column="file" jdbcType="LONGVARCHAR" property="file" />
+  </resultMap>
+  <sql id="Base_Column_List">
     id, apply_no, apply_type, status, legal_person_company, product_type, product_no_change, 
     product_no_change_after, product_arrive_time, product_number, product_change_type, 
     import_type, import_describe, timing_import_date, cost_affect, deadline_affect, project_affect, 
@@ -109,40 +522,10 @@
     change_describe, change_describe_after, commit_time, create_time, create_user, create_user_mis, 
     update_time, update_user, remark
   </sql>
-  <sql id="Blob_Column_List" >
+  <sql id="Blob_Column_List">
     change_file, change_file_after, file
   </sql>
-  <select id="selectByExampleWithBLOBs" resultMap="ResultMapWithBLOBs" parameterType="ctas.test.entity.HardwareDevelopmentExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    ,
-    <include refid="Blob_Column_List" />
-    from mbk_hardware_development
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByExample" resultMap="BaseResultMap" parameterType="ctas.test.entity.HardwareDevelopmentExample" >
-    select
-    <if test="distinct" >
-      distinct
-    </if>
-    <include refid="Base_Column_List" />
-    from mbk_hardware_development
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-    <if test="orderByClause != null" >
-      order by ${orderByClause}
-    </if>
-  </select>
-  <select id="selectByPrimaryKey" resultMap="ResultMapWithBLOBs" parameterType="java.lang.Integer" >
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
     select 
     <include refid="Base_Column_List" />
     ,
@@ -150,17 +533,11 @@
     from mbk_hardware_development
     where id = #{id,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
     delete from mbk_hardware_development
     where id = #{id,jdbcType=INTEGER}
   </delete>
-  <delete id="deleteByExample" parameterType="ctas.test.entity.HardwareDevelopmentExample" >
-    delete from mbk_hardware_development
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </delete>
-  <insert id="insert" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs" >
+  <insert id="insert" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
     insert into mbk_hardware_development (id, apply_no, apply_type, 
       status, legal_person_company, product_type, 
       product_no_change, product_no_change_after, 
@@ -190,558 +567,350 @@
       #{updateUser,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{changeFile,jdbcType=LONGVARCHAR}, 
       #{changeFileAfter,jdbcType=LONGVARCHAR}, #{file,jdbcType=LONGVARCHAR})
   </insert>
-  <insert id="insertSelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs" >
+  <insert id="insertSelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
     insert into mbk_hardware_development
-    <trim prefix="(" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         id,
       </if>
-      <if test="applyNo != null" >
+      <if test="applyNo != null">
         apply_no,
       </if>
-      <if test="applyType != null" >
+      <if test="applyType != null">
         apply_type,
       </if>
-      <if test="status != null" >
+      <if test="status != null">
         status,
       </if>
-      <if test="legalPersonCompany != null" >
+      <if test="legalPersonCompany != null">
         legal_person_company,
       </if>
-      <if test="productType != null" >
+      <if test="productType != null">
         product_type,
       </if>
-      <if test="productNoChange != null" >
+      <if test="productNoChange != null">
         product_no_change,
       </if>
-      <if test="productNoChangeAfter != null" >
+      <if test="productNoChangeAfter != null">
         product_no_change_after,
       </if>
-      <if test="productArriveTime != null" >
+      <if test="productArriveTime != null">
         product_arrive_time,
       </if>
-      <if test="productNumber != null" >
+      <if test="productNumber != null">
         product_number,
       </if>
-      <if test="productChangeType != null" >
+      <if test="productChangeType != null">
         product_change_type,
       </if>
-      <if test="importType != null" >
+      <if test="importType != null">
         import_type,
       </if>
-      <if test="importDescribe != null" >
+      <if test="importDescribe != null">
         import_describe,
       </if>
-      <if test="timingImportDate != null" >
+      <if test="timingImportDate != null">
         timing_import_date,
       </if>
-      <if test="costAffect != null" >
+      <if test="costAffect != null">
         cost_affect,
       </if>
-      <if test="deadlineAffect != null" >
+      <if test="deadlineAffect != null">
         deadline_affect,
       </if>
-      <if test="projectAffect != null" >
+      <if test="projectAffect != null">
         project_affect,
       </if>
-      <if test="detailedRequirementDescribe != null" >
+      <if test="detailedRequirementDescribe != null">
         detailed_requirement_describe,
       </if>
-      <if test="changeReason != null" >
+      <if test="changeReason != null">
         change_reason,
       </if>
-      <if test="changeType != null" >
+      <if test="changeType != null">
         change_type,
       </if>
-      <if test="changeTypeOtherDescribe != null" >
+      <if test="changeTypeOtherDescribe != null">
         change_type_other_describe,
       </if>
-      <if test="changePurview != null" >
+      <if test="changePurview != null">
         change_purview,
       </if>
-      <if test="changePurviewOtherDescribe != null" >
+      <if test="changePurviewOtherDescribe != null">
         change_purview_other_describe,
       </if>
-      <if test="involveDepartment != null" >
+      <if test="involveDepartment != null">
         involve_department,
       </if>
-      <if test="involveDepartmentOtherDescribe != null" >
+      <if test="involveDepartmentOtherDescribe != null">
         involve_department_other_describe,
       </if>
-      <if test="changeDescribe != null" >
+      <if test="changeDescribe != null">
         change_describe,
       </if>
-      <if test="changeDescribeAfter != null" >
+      <if test="changeDescribeAfter != null">
         change_describe_after,
       </if>
-      <if test="commitTime != null" >
+      <if test="commitTime != null">
         commit_time,
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time,
       </if>
-      <if test="createUser != null" >
+      <if test="createUser != null">
         create_user,
       </if>
-      <if test="createUserMis != null" >
+      <if test="createUserMis != null">
         create_user_mis,
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time,
       </if>
-      <if test="updateUser != null" >
+      <if test="updateUser != null">
         update_user,
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         remark,
       </if>
-      <if test="changeFile != null" >
+      <if test="changeFile != null">
         change_file,
       </if>
-      <if test="changeFileAfter != null" >
+      <if test="changeFileAfter != null">
         change_file_after,
       </if>
-      <if test="file != null" >
+      <if test="file != null">
         file,
       </if>
     </trim>
-    <trim prefix="values (" suffix=")" suffixOverrides="," >
-      <if test="id != null" >
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
         #{id,jdbcType=INTEGER},
       </if>
-      <if test="applyNo != null" >
+      <if test="applyNo != null">
         #{applyNo,jdbcType=VARCHAR},
       </if>
-      <if test="applyType != null" >
+      <if test="applyType != null">
         #{applyType,jdbcType=VARCHAR},
       </if>
-      <if test="status != null" >
+      <if test="status != null">
         #{status,jdbcType=INTEGER},
       </if>
-      <if test="legalPersonCompany != null" >
+      <if test="legalPersonCompany != null">
         #{legalPersonCompany,jdbcType=VARCHAR},
       </if>
-      <if test="productType != null" >
+      <if test="productType != null">
         #{productType,jdbcType=VARCHAR},
       </if>
-      <if test="productNoChange != null" >
+      <if test="productNoChange != null">
         #{productNoChange,jdbcType=VARCHAR},
       </if>
-      <if test="productNoChangeAfter != null" >
+      <if test="productNoChangeAfter != null">
         #{productNoChangeAfter,jdbcType=VARCHAR},
       </if>
-      <if test="productArriveTime != null" >
+      <if test="productArriveTime != null">
         #{productArriveTime,jdbcType=DATE},
       </if>
-      <if test="productNumber != null" >
+      <if test="productNumber != null">
         #{productNumber,jdbcType=INTEGER},
       </if>
-      <if test="productChangeType != null" >
+      <if test="productChangeType != null">
         #{productChangeType,jdbcType=VARCHAR},
       </if>
-      <if test="importType != null" >
+      <if test="importType != null">
         #{importType,jdbcType=VARCHAR},
       </if>
-      <if test="importDescribe != null" >
+      <if test="importDescribe != null">
         #{importDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="timingImportDate != null" >
+      <if test="timingImportDate != null">
         #{timingImportDate,jdbcType=DATE},
       </if>
-      <if test="costAffect != null" >
+      <if test="costAffect != null">
         #{costAffect,jdbcType=VARCHAR},
       </if>
-      <if test="deadlineAffect != null" >
+      <if test="deadlineAffect != null">
         #{deadlineAffect,jdbcType=VARCHAR},
       </if>
-      <if test="projectAffect != null" >
+      <if test="projectAffect != null">
         #{projectAffect,jdbcType=VARCHAR},
       </if>
-      <if test="detailedRequirementDescribe != null" >
+      <if test="detailedRequirementDescribe != null">
         #{detailedRequirementDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changeReason != null" >
+      <if test="changeReason != null">
         #{changeReason,jdbcType=VARCHAR},
       </if>
-      <if test="changeType != null" >
+      <if test="changeType != null">
         #{changeType,jdbcType=VARCHAR},
       </if>
-      <if test="changeTypeOtherDescribe != null" >
+      <if test="changeTypeOtherDescribe != null">
         #{changeTypeOtherDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changePurview != null" >
+      <if test="changePurview != null">
         #{changePurview,jdbcType=VARCHAR},
       </if>
-      <if test="changePurviewOtherDescribe != null" >
+      <if test="changePurviewOtherDescribe != null">
         #{changePurviewOtherDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="involveDepartment != null" >
+      <if test="involveDepartment != null">
         #{involveDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="involveDepartmentOtherDescribe != null" >
+      <if test="involveDepartmentOtherDescribe != null">
         #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changeDescribe != null" >
+      <if test="changeDescribe != null">
         #{changeDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changeDescribeAfter != null" >
+      <if test="changeDescribeAfter != null">
         #{changeDescribeAfter,jdbcType=VARCHAR},
       </if>
-      <if test="commitTime != null" >
+      <if test="commitTime != null">
         #{commitTime,jdbcType=DATE},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         #{createTime,jdbcType=DATE},
       </if>
-      <if test="createUser != null" >
+      <if test="createUser != null">
         #{createUser,jdbcType=VARCHAR},
       </if>
-      <if test="createUserMis != null" >
+      <if test="createUserMis != null">
         #{createUserMis,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updateUser != null" >
+      <if test="updateUser != null">
         #{updateUser,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="changeFile != null" >
+      <if test="changeFile != null">
         #{changeFile,jdbcType=LONGVARCHAR},
       </if>
-      <if test="changeFileAfter != null" >
+      <if test="changeFileAfter != null">
         #{changeFileAfter,jdbcType=LONGVARCHAR},
       </if>
-      <if test="file != null" >
+      <if test="file != null">
         #{file,jdbcType=LONGVARCHAR},
       </if>
     </trim>
   </insert>
-  <select id="countByExample" parameterType="ctas.test.entity.HardwareDevelopmentExample" resultType="java.lang.Integer" >
-    select count(*) from mbk_hardware_development
-    <if test="_parameter != null" >
-      <include refid="Example_Where_Clause" />
-    </if>
-  </select>
-  <update id="updateByExampleSelective" parameterType="map" >
+  <update id="updateByPrimaryKeySelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
     update mbk_hardware_development
-    <set >
-      <if test="record.id != null" >
-        id = #{record.id,jdbcType=INTEGER},
-      </if>
-      <if test="record.applyNo != null" >
-        apply_no = #{record.applyNo,jdbcType=VARCHAR},
-      </if>
-      <if test="record.applyType != null" >
-        apply_type = #{record.applyType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.status != null" >
-        status = #{record.status,jdbcType=INTEGER},
-      </if>
-      <if test="record.legalPersonCompany != null" >
-        legal_person_company = #{record.legalPersonCompany,jdbcType=VARCHAR},
-      </if>
-      <if test="record.productType != null" >
-        product_type = #{record.productType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.productNoChange != null" >
-        product_no_change = #{record.productNoChange,jdbcType=VARCHAR},
-      </if>
-      <if test="record.productNoChangeAfter != null" >
-        product_no_change_after = #{record.productNoChangeAfter,jdbcType=VARCHAR},
-      </if>
-      <if test="record.productArriveTime != null" >
-        product_arrive_time = #{record.productArriveTime,jdbcType=DATE},
-      </if>
-      <if test="record.productNumber != null" >
-        product_number = #{record.productNumber,jdbcType=INTEGER},
-      </if>
-      <if test="record.productChangeType != null" >
-        product_change_type = #{record.productChangeType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.importType != null" >
-        import_type = #{record.importType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.importDescribe != null" >
-        import_describe = #{record.importDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="record.timingImportDate != null" >
-        timing_import_date = #{record.timingImportDate,jdbcType=DATE},
-      </if>
-      <if test="record.costAffect != null" >
-        cost_affect = #{record.costAffect,jdbcType=VARCHAR},
-      </if>
-      <if test="record.deadlineAffect != null" >
-        deadline_affect = #{record.deadlineAffect,jdbcType=VARCHAR},
-      </if>
-      <if test="record.projectAffect != null" >
-        project_affect = #{record.projectAffect,jdbcType=VARCHAR},
-      </if>
-      <if test="record.detailedRequirementDescribe != null" >
-        detailed_requirement_describe = #{record.detailedRequirementDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changeReason != null" >
-        change_reason = #{record.changeReason,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changeType != null" >
-        change_type = #{record.changeType,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changeTypeOtherDescribe != null" >
-        change_type_other_describe = #{record.changeTypeOtherDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changePurview != null" >
-        change_purview = #{record.changePurview,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changePurviewOtherDescribe != null" >
-        change_purview_other_describe = #{record.changePurviewOtherDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="record.involveDepartment != null" >
-        involve_department = #{record.involveDepartment,jdbcType=VARCHAR},
-      </if>
-      <if test="record.involveDepartmentOtherDescribe != null" >
-        involve_department_other_describe = #{record.involveDepartmentOtherDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changeDescribe != null" >
-        change_describe = #{record.changeDescribe,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changeDescribeAfter != null" >
-        change_describe_after = #{record.changeDescribeAfter,jdbcType=VARCHAR},
-      </if>
-      <if test="record.commitTime != null" >
-        commit_time = #{record.commitTime,jdbcType=DATE},
-      </if>
-      <if test="record.createTime != null" >
-        create_time = #{record.createTime,jdbcType=DATE},
-      </if>
-      <if test="record.createUser != null" >
-        create_user = #{record.createUser,jdbcType=VARCHAR},
-      </if>
-      <if test="record.createUserMis != null" >
-        create_user_mis = #{record.createUserMis,jdbcType=VARCHAR},
-      </if>
-      <if test="record.updateTime != null" >
-        update_time = #{record.updateTime,jdbcType=DATE},
-      </if>
-      <if test="record.updateUser != null" >
-        update_user = #{record.updateUser,jdbcType=VARCHAR},
-      </if>
-      <if test="record.remark != null" >
-        remark = #{record.remark,jdbcType=VARCHAR},
-      </if>
-      <if test="record.changeFile != null" >
-        change_file = #{record.changeFile,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="record.changeFileAfter != null" >
-        change_file_after = #{record.changeFileAfter,jdbcType=LONGVARCHAR},
-      </if>
-      <if test="record.file != null" >
-        file = #{record.file,jdbcType=LONGVARCHAR},
-      </if>
-    </set>
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExampleWithBLOBs" parameterType="map" >
-    update mbk_hardware_development
-    set id = #{record.id,jdbcType=INTEGER},
-      apply_no = #{record.applyNo,jdbcType=VARCHAR},
-      apply_type = #{record.applyType,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=INTEGER},
-      legal_person_company = #{record.legalPersonCompany,jdbcType=VARCHAR},
-      product_type = #{record.productType,jdbcType=VARCHAR},
-      product_no_change = #{record.productNoChange,jdbcType=VARCHAR},
-      product_no_change_after = #{record.productNoChangeAfter,jdbcType=VARCHAR},
-      product_arrive_time = #{record.productArriveTime,jdbcType=DATE},
-      product_number = #{record.productNumber,jdbcType=INTEGER},
-      product_change_type = #{record.productChangeType,jdbcType=VARCHAR},
-      import_type = #{record.importType,jdbcType=VARCHAR},
-      import_describe = #{record.importDescribe,jdbcType=VARCHAR},
-      timing_import_date = #{record.timingImportDate,jdbcType=DATE},
-      cost_affect = #{record.costAffect,jdbcType=VARCHAR},
-      deadline_affect = #{record.deadlineAffect,jdbcType=VARCHAR},
-      project_affect = #{record.projectAffect,jdbcType=VARCHAR},
-      detailed_requirement_describe = #{record.detailedRequirementDescribe,jdbcType=VARCHAR},
-      change_reason = #{record.changeReason,jdbcType=VARCHAR},
-      change_type = #{record.changeType,jdbcType=VARCHAR},
-      change_type_other_describe = #{record.changeTypeOtherDescribe,jdbcType=VARCHAR},
-      change_purview = #{record.changePurview,jdbcType=VARCHAR},
-      change_purview_other_describe = #{record.changePurviewOtherDescribe,jdbcType=VARCHAR},
-      involve_department = #{record.involveDepartment,jdbcType=VARCHAR},
-      involve_department_other_describe = #{record.involveDepartmentOtherDescribe,jdbcType=VARCHAR},
-      change_describe = #{record.changeDescribe,jdbcType=VARCHAR},
-      change_describe_after = #{record.changeDescribeAfter,jdbcType=VARCHAR},
-      commit_time = #{record.commitTime,jdbcType=DATE},
-      create_time = #{record.createTime,jdbcType=DATE},
-      create_user = #{record.createUser,jdbcType=VARCHAR},
-      create_user_mis = #{record.createUserMis,jdbcType=VARCHAR},
-      update_time = #{record.updateTime,jdbcType=DATE},
-      update_user = #{record.updateUser,jdbcType=VARCHAR},
-      remark = #{record.remark,jdbcType=VARCHAR},
-      change_file = #{record.changeFile,jdbcType=LONGVARCHAR},
-      change_file_after = #{record.changeFileAfter,jdbcType=LONGVARCHAR},
-      file = #{record.file,jdbcType=LONGVARCHAR}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByExample" parameterType="map" >
-    update mbk_hardware_development
-    set id = #{record.id,jdbcType=INTEGER},
-      apply_no = #{record.applyNo,jdbcType=VARCHAR},
-      apply_type = #{record.applyType,jdbcType=VARCHAR},
-      status = #{record.status,jdbcType=INTEGER},
-      legal_person_company = #{record.legalPersonCompany,jdbcType=VARCHAR},
-      product_type = #{record.productType,jdbcType=VARCHAR},
-      product_no_change = #{record.productNoChange,jdbcType=VARCHAR},
-      product_no_change_after = #{record.productNoChangeAfter,jdbcType=VARCHAR},
-      product_arrive_time = #{record.productArriveTime,jdbcType=DATE},
-      product_number = #{record.productNumber,jdbcType=INTEGER},
-      product_change_type = #{record.productChangeType,jdbcType=VARCHAR},
-      import_type = #{record.importType,jdbcType=VARCHAR},
-      import_describe = #{record.importDescribe,jdbcType=VARCHAR},
-      timing_import_date = #{record.timingImportDate,jdbcType=DATE},
-      cost_affect = #{record.costAffect,jdbcType=VARCHAR},
-      deadline_affect = #{record.deadlineAffect,jdbcType=VARCHAR},
-      project_affect = #{record.projectAffect,jdbcType=VARCHAR},
-      detailed_requirement_describe = #{record.detailedRequirementDescribe,jdbcType=VARCHAR},
-      change_reason = #{record.changeReason,jdbcType=VARCHAR},
-      change_type = #{record.changeType,jdbcType=VARCHAR},
-      change_type_other_describe = #{record.changeTypeOtherDescribe,jdbcType=VARCHAR},
-      change_purview = #{record.changePurview,jdbcType=VARCHAR},
-      change_purview_other_describe = #{record.changePurviewOtherDescribe,jdbcType=VARCHAR},
-      involve_department = #{record.involveDepartment,jdbcType=VARCHAR},
-      involve_department_other_describe = #{record.involveDepartmentOtherDescribe,jdbcType=VARCHAR},
-      change_describe = #{record.changeDescribe,jdbcType=VARCHAR},
-      change_describe_after = #{record.changeDescribeAfter,jdbcType=VARCHAR},
-      commit_time = #{record.commitTime,jdbcType=DATE},
-      create_time = #{record.createTime,jdbcType=DATE},
-      create_user = #{record.createUser,jdbcType=VARCHAR},
-      create_user_mis = #{record.createUserMis,jdbcType=VARCHAR},
-      update_time = #{record.updateTime,jdbcType=DATE},
-      update_user = #{record.updateUser,jdbcType=VARCHAR},
-      remark = #{record.remark,jdbcType=VARCHAR}
-    <if test="_parameter != null" >
-      <include refid="Update_By_Example_Where_Clause" />
-    </if>
-  </update>
-  <update id="updateByPrimaryKeySelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs" >
-    update mbk_hardware_development
-    <set >
-      <if test="applyNo != null" >
+    <set>
+      <if test="applyNo != null">
         apply_no = #{applyNo,jdbcType=VARCHAR},
       </if>
-      <if test="applyType != null" >
+      <if test="applyType != null">
         apply_type = #{applyType,jdbcType=VARCHAR},
       </if>
-      <if test="status != null" >
+      <if test="status != null">
         status = #{status,jdbcType=INTEGER},
       </if>
-      <if test="legalPersonCompany != null" >
+      <if test="legalPersonCompany != null">
         legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
       </if>
-      <if test="productType != null" >
+      <if test="productType != null">
         product_type = #{productType,jdbcType=VARCHAR},
       </if>
-      <if test="productNoChange != null" >
+      <if test="productNoChange != null">
         product_no_change = #{productNoChange,jdbcType=VARCHAR},
       </if>
-      <if test="productNoChangeAfter != null" >
+      <if test="productNoChangeAfter != null">
         product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
       </if>
-      <if test="productArriveTime != null" >
+      <if test="productArriveTime != null">
         product_arrive_time = #{productArriveTime,jdbcType=DATE},
       </if>
-      <if test="productNumber != null" >
+      <if test="productNumber != null">
         product_number = #{productNumber,jdbcType=INTEGER},
       </if>
-      <if test="productChangeType != null" >
+      <if test="productChangeType != null">
         product_change_type = #{productChangeType,jdbcType=VARCHAR},
       </if>
-      <if test="importType != null" >
+      <if test="importType != null">
         import_type = #{importType,jdbcType=VARCHAR},
       </if>
-      <if test="importDescribe != null" >
+      <if test="importDescribe != null">
         import_describe = #{importDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="timingImportDate != null" >
+      <if test="timingImportDate != null">
         timing_import_date = #{timingImportDate,jdbcType=DATE},
       </if>
-      <if test="costAffect != null" >
+      <if test="costAffect != null">
         cost_affect = #{costAffect,jdbcType=VARCHAR},
       </if>
-      <if test="deadlineAffect != null" >
+      <if test="deadlineAffect != null">
         deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
       </if>
-      <if test="projectAffect != null" >
+      <if test="projectAffect != null">
         project_affect = #{projectAffect,jdbcType=VARCHAR},
       </if>
-      <if test="detailedRequirementDescribe != null" >
+      <if test="detailedRequirementDescribe != null">
         detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changeReason != null" >
+      <if test="changeReason != null">
         change_reason = #{changeReason,jdbcType=VARCHAR},
       </if>
-      <if test="changeType != null" >
+      <if test="changeType != null">
         change_type = #{changeType,jdbcType=VARCHAR},
       </if>
-      <if test="changeTypeOtherDescribe != null" >
+      <if test="changeTypeOtherDescribe != null">
         change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changePurview != null" >
+      <if test="changePurview != null">
         change_purview = #{changePurview,jdbcType=VARCHAR},
       </if>
-      <if test="changePurviewOtherDescribe != null" >
+      <if test="changePurviewOtherDescribe != null">
         change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="involveDepartment != null" >
+      <if test="involveDepartment != null">
         involve_department = #{involveDepartment,jdbcType=VARCHAR},
       </if>
-      <if test="involveDepartmentOtherDescribe != null" >
+      <if test="involveDepartmentOtherDescribe != null">
         involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changeDescribe != null" >
+      <if test="changeDescribe != null">
         change_describe = #{changeDescribe,jdbcType=VARCHAR},
       </if>
-      <if test="changeDescribeAfter != null" >
+      <if test="changeDescribeAfter != null">
         change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
       </if>
-      <if test="commitTime != null" >
+      <if test="commitTime != null">
         commit_time = #{commitTime,jdbcType=DATE},
       </if>
-      <if test="createTime != null" >
+      <if test="createTime != null">
         create_time = #{createTime,jdbcType=DATE},
       </if>
-      <if test="createUser != null" >
+      <if test="createUser != null">
         create_user = #{createUser,jdbcType=VARCHAR},
       </if>
-      <if test="createUserMis != null" >
+      <if test="createUserMis != null">
         create_user_mis = #{createUserMis,jdbcType=VARCHAR},
       </if>
-      <if test="updateTime != null" >
+      <if test="updateTime != null">
         update_time = #{updateTime,jdbcType=DATE},
       </if>
-      <if test="updateUser != null" >
+      <if test="updateUser != null">
         update_user = #{updateUser,jdbcType=VARCHAR},
       </if>
-      <if test="remark != null" >
+      <if test="remark != null">
         remark = #{remark,jdbcType=VARCHAR},
       </if>
-      <if test="changeFile != null" >
+      <if test="changeFile != null">
         change_file = #{changeFile,jdbcType=LONGVARCHAR},
       </if>
-      <if test="changeFileAfter != null" >
+      <if test="changeFileAfter != null">
         change_file_after = #{changeFileAfter,jdbcType=LONGVARCHAR},
       </if>
-      <if test="file != null" >
+      <if test="file != null">
         file = #{file,jdbcType=LONGVARCHAR},
       </if>
     </set>
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKeyWithBLOBs" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs" >
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
     update mbk_hardware_development
     set apply_no = #{applyNo,jdbcType=VARCHAR},
       apply_type = #{applyType,jdbcType=VARCHAR},
@@ -781,7 +950,1339 @@
       file = #{file,jdbcType=LONGVARCHAR}
     where id = #{id,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="ctas.test.entity.HardwareDevelopment" >
+  <update id="updateByPrimaryKey" parameterType="ctas.test.entity.HardwareDevelopment">
+    update mbk_hardware_development
+    set apply_no = #{applyNo,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=VARCHAR},
+      product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      product_number = #{productNumber,jdbcType=INTEGER},
+      product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      import_type = #{importType,jdbcType=VARCHAR},
+      import_describe = #{importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{timingImportDate,jdbcType=DATE},
+      cost_affect = #{costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{changeReason,jdbcType=VARCHAR},
+      change_type = #{changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      commit_time = #{commitTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=DATE},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="ctas.test.entity.HardwareDevelopment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="apply_type" jdbcType="VARCHAR" property="applyType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="legal_person_company" jdbcType="VARCHAR" property="legalPersonCompany" />
+    <result column="product_type" jdbcType="VARCHAR" property="productType" />
+    <result column="product_no_change" jdbcType="VARCHAR" property="productNoChange" />
+    <result column="product_no_change_after" jdbcType="VARCHAR" property="productNoChangeAfter" />
+    <result column="product_arrive_time" jdbcType="DATE" property="productArriveTime" />
+    <result column="product_number" jdbcType="INTEGER" property="productNumber" />
+    <result column="product_change_type" jdbcType="VARCHAR" property="productChangeType" />
+    <result column="import_type" jdbcType="VARCHAR" property="importType" />
+    <result column="import_describe" jdbcType="VARCHAR" property="importDescribe" />
+    <result column="timing_import_date" jdbcType="DATE" property="timingImportDate" />
+    <result column="cost_affect" jdbcType="VARCHAR" property="costAffect" />
+    <result column="deadline_affect" jdbcType="VARCHAR" property="deadlineAffect" />
+    <result column="project_affect" jdbcType="VARCHAR" property="projectAffect" />
+    <result column="detailed_requirement_describe" jdbcType="VARCHAR" property="detailedRequirementDescribe" />
+    <result column="change_reason" jdbcType="VARCHAR" property="changeReason" />
+    <result column="change_type" jdbcType="VARCHAR" property="changeType" />
+    <result column="change_type_other_describe" jdbcType="VARCHAR" property="changeTypeOtherDescribe" />
+    <result column="change_purview" jdbcType="VARCHAR" property="changePurview" />
+    <result column="change_purview_other_describe" jdbcType="VARCHAR" property="changePurviewOtherDescribe" />
+    <result column="involve_department" jdbcType="VARCHAR" property="involveDepartment" />
+    <result column="involve_department_other_describe" jdbcType="VARCHAR" property="involveDepartmentOtherDescribe" />
+    <result column="change_describe" jdbcType="VARCHAR" property="changeDescribe" />
+    <result column="change_describe_after" jdbcType="VARCHAR" property="changeDescribeAfter" />
+    <result column="commit_time" jdbcType="DATE" property="commitTime" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_user_mis" jdbcType="VARCHAR" property="createUserMis" />
+    <result column="update_time" jdbcType="DATE" property="updateTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    <result column="change_file" jdbcType="LONGVARCHAR" property="changeFile" />
+    <result column="change_file_after" jdbcType="LONGVARCHAR" property="changeFileAfter" />
+    <result column="file" jdbcType="LONGVARCHAR" property="file" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    id, apply_no, apply_type, status, legal_person_company, product_type, product_no_change, 
+    product_no_change_after, product_arrive_time, product_number, product_change_type, 
+    import_type, import_describe, timing_import_date, cost_affect, deadline_affect, project_affect, 
+    detailed_requirement_describe, change_reason, change_type, change_type_other_describe, 
+    change_purview, change_purview_other_describe, involve_department, involve_department_other_describe, 
+    change_describe, change_describe_after, commit_time, create_time, create_user, create_user_mis, 
+    update_time, update_user, remark
+  </sql>
+  <sql id="Blob_Column_List">
+    change_file, change_file_after, file
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from mbk_hardware_development
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mbk_hardware_development
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    insert into mbk_hardware_development (id, apply_no, apply_type, 
+      status, legal_person_company, product_type, 
+      product_no_change, product_no_change_after, 
+      product_arrive_time, product_number, product_change_type, 
+      import_type, import_describe, timing_import_date, 
+      cost_affect, deadline_affect, project_affect, 
+      detailed_requirement_describe, change_reason, 
+      change_type, change_type_other_describe, change_purview, 
+      change_purview_other_describe, involve_department, 
+      involve_department_other_describe, change_describe, 
+      change_describe_after, commit_time, create_time, 
+      create_user, create_user_mis, update_time, 
+      update_user, remark, change_file, 
+      change_file_after, file)
+    values (#{id,jdbcType=INTEGER}, #{applyNo,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{legalPersonCompany,jdbcType=VARCHAR}, #{productType,jdbcType=VARCHAR}, 
+      #{productNoChange,jdbcType=VARCHAR}, #{productNoChangeAfter,jdbcType=VARCHAR}, 
+      #{productArriveTime,jdbcType=DATE}, #{productNumber,jdbcType=INTEGER}, #{productChangeType,jdbcType=VARCHAR}, 
+      #{importType,jdbcType=VARCHAR}, #{importDescribe,jdbcType=VARCHAR}, #{timingImportDate,jdbcType=DATE}, 
+      #{costAffect,jdbcType=VARCHAR}, #{deadlineAffect,jdbcType=VARCHAR}, #{projectAffect,jdbcType=VARCHAR}, 
+      #{detailedRequirementDescribe,jdbcType=VARCHAR}, #{changeReason,jdbcType=VARCHAR}, 
+      #{changeType,jdbcType=VARCHAR}, #{changeTypeOtherDescribe,jdbcType=VARCHAR}, #{changePurview,jdbcType=VARCHAR}, 
+      #{changePurviewOtherDescribe,jdbcType=VARCHAR}, #{involveDepartment,jdbcType=VARCHAR}, 
+      #{involveDepartmentOtherDescribe,jdbcType=VARCHAR}, #{changeDescribe,jdbcType=VARCHAR}, 
+      #{changeDescribeAfter,jdbcType=VARCHAR}, #{commitTime,jdbcType=DATE}, #{createTime,jdbcType=DATE}, 
+      #{createUser,jdbcType=VARCHAR}, #{createUserMis,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, 
+      #{updateUser,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{changeFile,jdbcType=LONGVARCHAR}, 
+      #{changeFileAfter,jdbcType=LONGVARCHAR}, #{file,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    insert into mbk_hardware_development
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="applyType != null">
+        apply_type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="legalPersonCompany != null">
+        legal_person_company,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="productNoChange != null">
+        product_no_change,
+      </if>
+      <if test="productNoChangeAfter != null">
+        product_no_change_after,
+      </if>
+      <if test="productArriveTime != null">
+        product_arrive_time,
+      </if>
+      <if test="productNumber != null">
+        product_number,
+      </if>
+      <if test="productChangeType != null">
+        product_change_type,
+      </if>
+      <if test="importType != null">
+        import_type,
+      </if>
+      <if test="importDescribe != null">
+        import_describe,
+      </if>
+      <if test="timingImportDate != null">
+        timing_import_date,
+      </if>
+      <if test="costAffect != null">
+        cost_affect,
+      </if>
+      <if test="deadlineAffect != null">
+        deadline_affect,
+      </if>
+      <if test="projectAffect != null">
+        project_affect,
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        detailed_requirement_describe,
+      </if>
+      <if test="changeReason != null">
+        change_reason,
+      </if>
+      <if test="changeType != null">
+        change_type,
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        change_type_other_describe,
+      </if>
+      <if test="changePurview != null">
+        change_purview,
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        change_purview_other_describe,
+      </if>
+      <if test="involveDepartment != null">
+        involve_department,
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        involve_department_other_describe,
+      </if>
+      <if test="changeDescribe != null">
+        change_describe,
+      </if>
+      <if test="changeDescribeAfter != null">
+        change_describe_after,
+      </if>
+      <if test="commitTime != null">
+        commit_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createUserMis != null">
+        create_user_mis,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="changeFile != null">
+        change_file,
+      </if>
+      <if test="changeFileAfter != null">
+        change_file_after,
+      </if>
+      <if test="file != null">
+        file,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="legalPersonCompany != null">
+        #{legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChange != null">
+        #{productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChangeAfter != null">
+        #{productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="productArriveTime != null">
+        #{productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="productNumber != null">
+        #{productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="productChangeType != null">
+        #{productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null">
+        #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="importDescribe != null">
+        #{importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="timingImportDate != null">
+        #{timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="costAffect != null">
+        #{costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="deadlineAffect != null">
+        #{deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="projectAffect != null">
+        #{projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeReason != null">
+        #{changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurview != null">
+        #{changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartment != null">
+        #{involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribe != null">
+        #{changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribeAfter != null">
+        #{changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="commitTime != null">
+        #{commitTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserMis != null">
+        #{createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFile != null">
+        #{changeFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="changeFileAfter != null">
+        #{changeFileAfter,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="file != null">
+        #{file,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    update mbk_hardware_development
+    <set>
+      <if test="applyNo != null">
+        apply_no = #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        apply_type = #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="legalPersonCompany != null">
+        legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChange != null">
+        product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChangeAfter != null">
+        product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="productArriveTime != null">
+        product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="productNumber != null">
+        product_number = #{productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="productChangeType != null">
+        product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null">
+        import_type = #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="importDescribe != null">
+        import_describe = #{importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="timingImportDate != null">
+        timing_import_date = #{timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="costAffect != null">
+        cost_affect = #{costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="deadlineAffect != null">
+        deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="projectAffect != null">
+        project_affect = #{projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeReason != null">
+        change_reason = #{changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        change_type = #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurview != null">
+        change_purview = #{changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartment != null">
+        involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribe != null">
+        change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribeAfter != null">
+        change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="commitTime != null">
+        commit_time = #{commitTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserMis != null">
+        create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFile != null">
+        change_file = #{changeFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="changeFileAfter != null">
+        change_file_after = #{changeFileAfter,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="file != null">
+        file = #{file,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    update mbk_hardware_development
+    set apply_no = #{applyNo,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=VARCHAR},
+      product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      product_number = #{productNumber,jdbcType=INTEGER},
+      product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      import_type = #{importType,jdbcType=VARCHAR},
+      import_describe = #{importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{timingImportDate,jdbcType=DATE},
+      cost_affect = #{costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{changeReason,jdbcType=VARCHAR},
+      change_type = #{changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      commit_time = #{commitTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=DATE},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      change_file = #{changeFile,jdbcType=LONGVARCHAR},
+      change_file_after = #{changeFileAfter,jdbcType=LONGVARCHAR},
+      file = #{file,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="ctas.test.entity.HardwareDevelopment">
+    update mbk_hardware_development
+    set apply_no = #{applyNo,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=VARCHAR},
+      product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      product_number = #{productNumber,jdbcType=INTEGER},
+      product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      import_type = #{importType,jdbcType=VARCHAR},
+      import_describe = #{importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{timingImportDate,jdbcType=DATE},
+      cost_affect = #{costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{changeReason,jdbcType=VARCHAR},
+      change_type = #{changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      commit_time = #{commitTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=DATE},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <resultMap id="BaseResultMap" type="ctas.test.entity.HardwareDevelopment">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="apply_no" jdbcType="VARCHAR" property="applyNo" />
+    <result column="apply_type" jdbcType="VARCHAR" property="applyType" />
+    <result column="status" jdbcType="INTEGER" property="status" />
+    <result column="legal_person_company" jdbcType="VARCHAR" property="legalPersonCompany" />
+    <result column="product_type" jdbcType="VARCHAR" property="productType" />
+    <result column="product_no_change" jdbcType="VARCHAR" property="productNoChange" />
+    <result column="product_no_change_after" jdbcType="VARCHAR" property="productNoChangeAfter" />
+    <result column="product_arrive_time" jdbcType="DATE" property="productArriveTime" />
+    <result column="product_number" jdbcType="INTEGER" property="productNumber" />
+    <result column="product_change_type" jdbcType="VARCHAR" property="productChangeType" />
+    <result column="import_type" jdbcType="VARCHAR" property="importType" />
+    <result column="import_describe" jdbcType="VARCHAR" property="importDescribe" />
+    <result column="timing_import_date" jdbcType="DATE" property="timingImportDate" />
+    <result column="cost_affect" jdbcType="VARCHAR" property="costAffect" />
+    <result column="deadline_affect" jdbcType="VARCHAR" property="deadlineAffect" />
+    <result column="project_affect" jdbcType="VARCHAR" property="projectAffect" />
+    <result column="detailed_requirement_describe" jdbcType="VARCHAR" property="detailedRequirementDescribe" />
+    <result column="change_reason" jdbcType="VARCHAR" property="changeReason" />
+    <result column="change_type" jdbcType="VARCHAR" property="changeType" />
+    <result column="change_type_other_describe" jdbcType="VARCHAR" property="changeTypeOtherDescribe" />
+    <result column="change_purview" jdbcType="VARCHAR" property="changePurview" />
+    <result column="change_purview_other_describe" jdbcType="VARCHAR" property="changePurviewOtherDescribe" />
+    <result column="involve_department" jdbcType="VARCHAR" property="involveDepartment" />
+    <result column="involve_department_other_describe" jdbcType="VARCHAR" property="involveDepartmentOtherDescribe" />
+    <result column="change_describe" jdbcType="VARCHAR" property="changeDescribe" />
+    <result column="change_describe_after" jdbcType="VARCHAR" property="changeDescribeAfter" />
+    <result column="commit_time" jdbcType="DATE" property="commitTime" />
+    <result column="create_time" jdbcType="DATE" property="createTime" />
+    <result column="create_user" jdbcType="VARCHAR" property="createUser" />
+    <result column="create_user_mis" jdbcType="VARCHAR" property="createUserMis" />
+    <result column="update_time" jdbcType="DATE" property="updateTime" />
+    <result column="update_user" jdbcType="VARCHAR" property="updateUser" />
+    <result column="remark" jdbcType="VARCHAR" property="remark" />
+  </resultMap>
+  <resultMap extends="BaseResultMap" id="ResultMapWithBLOBs" type="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    <result column="change_file" jdbcType="LONGVARCHAR" property="changeFile" />
+    <result column="change_file_after" jdbcType="LONGVARCHAR" property="changeFileAfter" />
+    <result column="file" jdbcType="LONGVARCHAR" property="file" />
+  </resultMap>
+  <sql id="Example_Where_Clause">
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+    id, apply_no, apply_type, status, legal_person_company, product_type, product_no_change, 
+    product_no_change_after, product_arrive_time, product_number, product_change_type, 
+    import_type, import_describe, timing_import_date, cost_affect, deadline_affect, project_affect, 
+    detailed_requirement_describe, change_reason, change_type, change_type_other_describe, 
+    change_purview, change_purview_other_describe, involve_department, involve_department_other_describe, 
+    change_describe, change_describe_after, commit_time, create_time, create_user, create_user_mis, 
+    update_time, update_user, remark
+  </sql>
+  <sql id="Blob_Column_List">
+    change_file, change_file_after, file
+  </sql>
+  <select id="selectByExampleWithBLOBs" parameterType="ctas.test.entity.HardwareDevelopmentExample" resultMap="ResultMapWithBLOBs">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from mbk_hardware_development
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByExample" parameterType="ctas.test.entity.HardwareDevelopmentExample" resultMap="BaseResultMap">
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from mbk_hardware_development
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="ResultMapWithBLOBs">
+    select 
+    <include refid="Base_Column_List" />
+    ,
+    <include refid="Blob_Column_List" />
+    from mbk_hardware_development
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from mbk_hardware_development
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="ctas.test.entity.HardwareDevelopmentExample">
+    delete from mbk_hardware_development
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    insert into mbk_hardware_development (id, apply_no, apply_type, 
+      status, legal_person_company, product_type, 
+      product_no_change, product_no_change_after, 
+      product_arrive_time, product_number, product_change_type, 
+      import_type, import_describe, timing_import_date, 
+      cost_affect, deadline_affect, project_affect, 
+      detailed_requirement_describe, change_reason, 
+      change_type, change_type_other_describe, change_purview, 
+      change_purview_other_describe, involve_department, 
+      involve_department_other_describe, change_describe, 
+      change_describe_after, commit_time, create_time, 
+      create_user, create_user_mis, update_time, 
+      update_user, remark, change_file, 
+      change_file_after, file)
+    values (#{id,jdbcType=INTEGER}, #{applyNo,jdbcType=VARCHAR}, #{applyType,jdbcType=VARCHAR}, 
+      #{status,jdbcType=INTEGER}, #{legalPersonCompany,jdbcType=VARCHAR}, #{productType,jdbcType=VARCHAR}, 
+      #{productNoChange,jdbcType=VARCHAR}, #{productNoChangeAfter,jdbcType=VARCHAR}, 
+      #{productArriveTime,jdbcType=DATE}, #{productNumber,jdbcType=INTEGER}, #{productChangeType,jdbcType=VARCHAR}, 
+      #{importType,jdbcType=VARCHAR}, #{importDescribe,jdbcType=VARCHAR}, #{timingImportDate,jdbcType=DATE}, 
+      #{costAffect,jdbcType=VARCHAR}, #{deadlineAffect,jdbcType=VARCHAR}, #{projectAffect,jdbcType=VARCHAR}, 
+      #{detailedRequirementDescribe,jdbcType=VARCHAR}, #{changeReason,jdbcType=VARCHAR}, 
+      #{changeType,jdbcType=VARCHAR}, #{changeTypeOtherDescribe,jdbcType=VARCHAR}, #{changePurview,jdbcType=VARCHAR}, 
+      #{changePurviewOtherDescribe,jdbcType=VARCHAR}, #{involveDepartment,jdbcType=VARCHAR}, 
+      #{involveDepartmentOtherDescribe,jdbcType=VARCHAR}, #{changeDescribe,jdbcType=VARCHAR}, 
+      #{changeDescribeAfter,jdbcType=VARCHAR}, #{commitTime,jdbcType=DATE}, #{createTime,jdbcType=DATE}, 
+      #{createUser,jdbcType=VARCHAR}, #{createUserMis,jdbcType=VARCHAR}, #{updateTime,jdbcType=DATE}, 
+      #{updateUser,jdbcType=VARCHAR}, #{remark,jdbcType=VARCHAR}, #{changeFile,jdbcType=LONGVARCHAR}, 
+      #{changeFileAfter,jdbcType=LONGVARCHAR}, #{file,jdbcType=LONGVARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    insert into mbk_hardware_development
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        id,
+      </if>
+      <if test="applyNo != null">
+        apply_no,
+      </if>
+      <if test="applyType != null">
+        apply_type,
+      </if>
+      <if test="status != null">
+        status,
+      </if>
+      <if test="legalPersonCompany != null">
+        legal_person_company,
+      </if>
+      <if test="productType != null">
+        product_type,
+      </if>
+      <if test="productNoChange != null">
+        product_no_change,
+      </if>
+      <if test="productNoChangeAfter != null">
+        product_no_change_after,
+      </if>
+      <if test="productArriveTime != null">
+        product_arrive_time,
+      </if>
+      <if test="productNumber != null">
+        product_number,
+      </if>
+      <if test="productChangeType != null">
+        product_change_type,
+      </if>
+      <if test="importType != null">
+        import_type,
+      </if>
+      <if test="importDescribe != null">
+        import_describe,
+      </if>
+      <if test="timingImportDate != null">
+        timing_import_date,
+      </if>
+      <if test="costAffect != null">
+        cost_affect,
+      </if>
+      <if test="deadlineAffect != null">
+        deadline_affect,
+      </if>
+      <if test="projectAffect != null">
+        project_affect,
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        detailed_requirement_describe,
+      </if>
+      <if test="changeReason != null">
+        change_reason,
+      </if>
+      <if test="changeType != null">
+        change_type,
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        change_type_other_describe,
+      </if>
+      <if test="changePurview != null">
+        change_purview,
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        change_purview_other_describe,
+      </if>
+      <if test="involveDepartment != null">
+        involve_department,
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        involve_department_other_describe,
+      </if>
+      <if test="changeDescribe != null">
+        change_describe,
+      </if>
+      <if test="changeDescribeAfter != null">
+        change_describe_after,
+      </if>
+      <if test="commitTime != null">
+        commit_time,
+      </if>
+      <if test="createTime != null">
+        create_time,
+      </if>
+      <if test="createUser != null">
+        create_user,
+      </if>
+      <if test="createUserMis != null">
+        create_user_mis,
+      </if>
+      <if test="updateTime != null">
+        update_time,
+      </if>
+      <if test="updateUser != null">
+        update_user,
+      </if>
+      <if test="remark != null">
+        remark,
+      </if>
+      <if test="changeFile != null">
+        change_file,
+      </if>
+      <if test="changeFileAfter != null">
+        change_file_after,
+      </if>
+      <if test="file != null">
+        file,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="id != null">
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="applyNo != null">
+        #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        #{status,jdbcType=INTEGER},
+      </if>
+      <if test="legalPersonCompany != null">
+        #{legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChange != null">
+        #{productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChangeAfter != null">
+        #{productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="productArriveTime != null">
+        #{productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="productNumber != null">
+        #{productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="productChangeType != null">
+        #{productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null">
+        #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="importDescribe != null">
+        #{importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="timingImportDate != null">
+        #{timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="costAffect != null">
+        #{costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="deadlineAffect != null">
+        #{deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="projectAffect != null">
+        #{projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeReason != null">
+        #{changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurview != null">
+        #{changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartment != null">
+        #{involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribe != null">
+        #{changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribeAfter != null">
+        #{changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="commitTime != null">
+        #{commitTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserMis != null">
+        #{createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFile != null">
+        #{changeFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="changeFileAfter != null">
+        #{changeFileAfter,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="file != null">
+        #{file,jdbcType=LONGVARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="ctas.test.entity.HardwareDevelopmentExample" resultType="java.lang.Integer">
+    select count(*) from mbk_hardware_development
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+    update mbk_hardware_development
+    <set>
+      <if test="record.id != null">
+        id = #{record.id,jdbcType=INTEGER},
+      </if>
+      <if test="record.applyNo != null">
+        apply_no = #{record.applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="record.applyType != null">
+        apply_type = #{record.applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.status != null">
+        status = #{record.status,jdbcType=INTEGER},
+      </if>
+      <if test="record.legalPersonCompany != null">
+        legal_person_company = #{record.legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productType != null">
+        product_type = #{record.productType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productNoChange != null">
+        product_no_change = #{record.productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productNoChangeAfter != null">
+        product_no_change_after = #{record.productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="record.productArriveTime != null">
+        product_arrive_time = #{record.productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="record.productNumber != null">
+        product_number = #{record.productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="record.productChangeType != null">
+        product_change_type = #{record.productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.importType != null">
+        import_type = #{record.importType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.importDescribe != null">
+        import_describe = #{record.importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.timingImportDate != null">
+        timing_import_date = #{record.timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="record.costAffect != null">
+        cost_affect = #{record.costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="record.deadlineAffect != null">
+        deadline_affect = #{record.deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="record.projectAffect != null">
+        project_affect = #{record.projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="record.detailedRequirementDescribe != null">
+        detailed_requirement_describe = #{record.detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeReason != null">
+        change_reason = #{record.changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeType != null">
+        change_type = #{record.changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeTypeOtherDescribe != null">
+        change_type_other_describe = #{record.changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changePurview != null">
+        change_purview = #{record.changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changePurviewOtherDescribe != null">
+        change_purview_other_describe = #{record.changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.involveDepartment != null">
+        involve_department = #{record.involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="record.involveDepartmentOtherDescribe != null">
+        involve_department_other_describe = #{record.involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeDescribe != null">
+        change_describe = #{record.changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeDescribeAfter != null">
+        change_describe_after = #{record.changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="record.commitTime != null">
+        commit_time = #{record.commitTime,jdbcType=DATE},
+      </if>
+      <if test="record.createTime != null">
+        create_time = #{record.createTime,jdbcType=DATE},
+      </if>
+      <if test="record.createUser != null">
+        create_user = #{record.createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.createUserMis != null">
+        create_user_mis = #{record.createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="record.updateTime != null">
+        update_time = #{record.updateTime,jdbcType=DATE},
+      </if>
+      <if test="record.updateUser != null">
+        update_user = #{record.updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="record.remark != null">
+        remark = #{record.remark,jdbcType=VARCHAR},
+      </if>
+      <if test="record.changeFile != null">
+        change_file = #{record.changeFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.changeFileAfter != null">
+        change_file_after = #{record.changeFileAfter,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="record.file != null">
+        file = #{record.file,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExampleWithBLOBs" parameterType="map">
+    update mbk_hardware_development
+    set id = #{record.id,jdbcType=INTEGER},
+      apply_no = #{record.applyNo,jdbcType=VARCHAR},
+      apply_type = #{record.applyType,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      legal_person_company = #{record.legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{record.productType,jdbcType=VARCHAR},
+      product_no_change = #{record.productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{record.productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{record.productArriveTime,jdbcType=DATE},
+      product_number = #{record.productNumber,jdbcType=INTEGER},
+      product_change_type = #{record.productChangeType,jdbcType=VARCHAR},
+      import_type = #{record.importType,jdbcType=VARCHAR},
+      import_describe = #{record.importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{record.timingImportDate,jdbcType=DATE},
+      cost_affect = #{record.costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{record.deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{record.projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{record.detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{record.changeReason,jdbcType=VARCHAR},
+      change_type = #{record.changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{record.changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{record.changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{record.changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{record.involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{record.involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_describe = #{record.changeDescribe,jdbcType=VARCHAR},
+      change_describe_after = #{record.changeDescribeAfter,jdbcType=VARCHAR},
+      commit_time = #{record.commitTime,jdbcType=DATE},
+      create_time = #{record.createTime,jdbcType=DATE},
+      create_user = #{record.createUser,jdbcType=VARCHAR},
+      create_user_mis = #{record.createUserMis,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=DATE},
+      update_user = #{record.updateUser,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR},
+      change_file = #{record.changeFile,jdbcType=LONGVARCHAR},
+      change_file_after = #{record.changeFileAfter,jdbcType=LONGVARCHAR},
+      file = #{record.file,jdbcType=LONGVARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+    update mbk_hardware_development
+    set id = #{record.id,jdbcType=INTEGER},
+      apply_no = #{record.applyNo,jdbcType=VARCHAR},
+      apply_type = #{record.applyType,jdbcType=VARCHAR},
+      status = #{record.status,jdbcType=INTEGER},
+      legal_person_company = #{record.legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{record.productType,jdbcType=VARCHAR},
+      product_no_change = #{record.productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{record.productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{record.productArriveTime,jdbcType=DATE},
+      product_number = #{record.productNumber,jdbcType=INTEGER},
+      product_change_type = #{record.productChangeType,jdbcType=VARCHAR},
+      import_type = #{record.importType,jdbcType=VARCHAR},
+      import_describe = #{record.importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{record.timingImportDate,jdbcType=DATE},
+      cost_affect = #{record.costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{record.deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{record.projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{record.detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{record.changeReason,jdbcType=VARCHAR},
+      change_type = #{record.changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{record.changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{record.changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{record.changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{record.involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{record.involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_describe = #{record.changeDescribe,jdbcType=VARCHAR},
+      change_describe_after = #{record.changeDescribeAfter,jdbcType=VARCHAR},
+      commit_time = #{record.commitTime,jdbcType=DATE},
+      create_time = #{record.createTime,jdbcType=DATE},
+      create_user = #{record.createUser,jdbcType=VARCHAR},
+      create_user_mis = #{record.createUserMis,jdbcType=VARCHAR},
+      update_time = #{record.updateTime,jdbcType=DATE},
+      update_user = #{record.updateUser,jdbcType=VARCHAR},
+      remark = #{record.remark,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    update mbk_hardware_development
+    <set>
+      <if test="applyNo != null">
+        apply_no = #{applyNo,jdbcType=VARCHAR},
+      </if>
+      <if test="applyType != null">
+        apply_type = #{applyType,jdbcType=VARCHAR},
+      </if>
+      <if test="status != null">
+        status = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="legalPersonCompany != null">
+        legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      </if>
+      <if test="productType != null">
+        product_type = #{productType,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChange != null">
+        product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      </if>
+      <if test="productNoChangeAfter != null">
+        product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="productArriveTime != null">
+        product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      </if>
+      <if test="productNumber != null">
+        product_number = #{productNumber,jdbcType=INTEGER},
+      </if>
+      <if test="productChangeType != null">
+        product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      </if>
+      <if test="importType != null">
+        import_type = #{importType,jdbcType=VARCHAR},
+      </if>
+      <if test="importDescribe != null">
+        import_describe = #{importDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="timingImportDate != null">
+        timing_import_date = #{timingImportDate,jdbcType=DATE},
+      </if>
+      <if test="costAffect != null">
+        cost_affect = #{costAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="deadlineAffect != null">
+        deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="projectAffect != null">
+        project_affect = #{projectAffect,jdbcType=VARCHAR},
+      </if>
+      <if test="detailedRequirementDescribe != null">
+        detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeReason != null">
+        change_reason = #{changeReason,jdbcType=VARCHAR},
+      </if>
+      <if test="changeType != null">
+        change_type = #{changeType,jdbcType=VARCHAR},
+      </if>
+      <if test="changeTypeOtherDescribe != null">
+        change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurview != null">
+        change_purview = #{changePurview,jdbcType=VARCHAR},
+      </if>
+      <if test="changePurviewOtherDescribe != null">
+        change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartment != null">
+        involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      </if>
+      <if test="involveDepartmentOtherDescribe != null">
+        involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribe != null">
+        change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      </if>
+      <if test="changeDescribeAfter != null">
+        change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      </if>
+      <if test="commitTime != null">
+        commit_time = #{commitTime,jdbcType=DATE},
+      </if>
+      <if test="createTime != null">
+        create_time = #{createTime,jdbcType=DATE},
+      </if>
+      <if test="createUser != null">
+        create_user = #{createUser,jdbcType=VARCHAR},
+      </if>
+      <if test="createUserMis != null">
+        create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      </if>
+      <if test="updateTime != null">
+        update_time = #{updateTime,jdbcType=DATE},
+      </if>
+      <if test="updateUser != null">
+        update_user = #{updateUser,jdbcType=VARCHAR},
+      </if>
+      <if test="remark != null">
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="changeFile != null">
+        change_file = #{changeFile,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="changeFileAfter != null">
+        change_file_after = #{changeFileAfter,jdbcType=LONGVARCHAR},
+      </if>
+      <if test="file != null">
+        file = #{file,jdbcType=LONGVARCHAR},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKeyWithBLOBs" parameterType="ctas.test.entity.HardwareDevelopmentWithBLOBs">
+    update mbk_hardware_development
+    set apply_no = #{applyNo,jdbcType=VARCHAR},
+      apply_type = #{applyType,jdbcType=VARCHAR},
+      status = #{status,jdbcType=INTEGER},
+      legal_person_company = #{legalPersonCompany,jdbcType=VARCHAR},
+      product_type = #{productType,jdbcType=VARCHAR},
+      product_no_change = #{productNoChange,jdbcType=VARCHAR},
+      product_no_change_after = #{productNoChangeAfter,jdbcType=VARCHAR},
+      product_arrive_time = #{productArriveTime,jdbcType=DATE},
+      product_number = #{productNumber,jdbcType=INTEGER},
+      product_change_type = #{productChangeType,jdbcType=VARCHAR},
+      import_type = #{importType,jdbcType=VARCHAR},
+      import_describe = #{importDescribe,jdbcType=VARCHAR},
+      timing_import_date = #{timingImportDate,jdbcType=DATE},
+      cost_affect = #{costAffect,jdbcType=VARCHAR},
+      deadline_affect = #{deadlineAffect,jdbcType=VARCHAR},
+      project_affect = #{projectAffect,jdbcType=VARCHAR},
+      detailed_requirement_describe = #{detailedRequirementDescribe,jdbcType=VARCHAR},
+      change_reason = #{changeReason,jdbcType=VARCHAR},
+      change_type = #{changeType,jdbcType=VARCHAR},
+      change_type_other_describe = #{changeTypeOtherDescribe,jdbcType=VARCHAR},
+      change_purview = #{changePurview,jdbcType=VARCHAR},
+      change_purview_other_describe = #{changePurviewOtherDescribe,jdbcType=VARCHAR},
+      involve_department = #{involveDepartment,jdbcType=VARCHAR},
+      involve_department_other_describe = #{involveDepartmentOtherDescribe,jdbcType=VARCHAR},
+      change_describe = #{changeDescribe,jdbcType=VARCHAR},
+      change_describe_after = #{changeDescribeAfter,jdbcType=VARCHAR},
+      commit_time = #{commitTime,jdbcType=DATE},
+      create_time = #{createTime,jdbcType=DATE},
+      create_user = #{createUser,jdbcType=VARCHAR},
+      create_user_mis = #{createUserMis,jdbcType=VARCHAR},
+      update_time = #{updateTime,jdbcType=DATE},
+      update_user = #{updateUser,jdbcType=VARCHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      change_file = #{changeFile,jdbcType=LONGVARCHAR},
+      change_file_after = #{changeFileAfter,jdbcType=LONGVARCHAR},
+      file = #{file,jdbcType=LONGVARCHAR}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="ctas.test.entity.HardwareDevelopment">
     update mbk_hardware_development
     set apply_no = #{applyNo,jdbcType=VARCHAR},
       apply_type = #{applyType,jdbcType=VARCHAR},

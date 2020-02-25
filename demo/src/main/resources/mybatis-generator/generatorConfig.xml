@@ -33,9 +33,13 @@
             </javaClientGenerator>
 
             <table tableName="mbk_hardware_development" domainObjectName="HardwareDevelopment"
-            />
+                            enableCountByExample="false" enableUpdateByExample="false"
+                           enableDeleteByExample="false" enableSelectByExample="false"
+                           selectByExampleQueryId="false"/>
             <table tableName="mbk_hardware_development_ approve_log" domainObjectName="HardwareDevelopmentApproveLog"
-            />
+                    enableCountByExample="false" enableUpdateByExample="false"
+                    enableDeleteByExample="false" enableSelectByExample="false"
+                    selectByExampleQueryId="false"/>
 
 
         </context>

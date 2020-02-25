@@ -53,9 +53,15 @@ public class HardwareDevelopment {
 
     private String involveDepartmentOtherDescribe;
 
+    private String changeFile;
+
     private String changeDescribe;
 
+    private String changeFileAfter;
+
     private String changeDescribeAfter;
+
+    private String file;
 
     private Date commitTime;
 
@@ -271,6 +277,14 @@ public class HardwareDevelopment {
         this.involveDepartmentOtherDescribe = involveDepartmentOtherDescribe == null ? null : involveDepartmentOtherDescribe.trim();
     }
 
+    public String getChangeFile() {
+        return changeFile;
+    }
+
+    public void setChangeFile(String changeFile) {
+        this.changeFile = changeFile == null ? null : changeFile.trim();
+    }
+
     public String getChangeDescribe() {
         return changeDescribe;
     }
@@ -279,12 +293,28 @@ public class HardwareDevelopment {
         this.changeDescribe = changeDescribe == null ? null : changeDescribe.trim();
     }
 
+    public String getChangeFileAfter() {
+        return changeFileAfter;
+    }
+
+    public void setChangeFileAfter(String changeFileAfter) {
+        this.changeFileAfter = changeFileAfter == null ? null : changeFileAfter.trim();
+    }
+
     public String getChangeDescribeAfter() {
         return changeDescribeAfter;
     }
 
     public void setChangeDescribeAfter(String changeDescribeAfter) {
         this.changeDescribeAfter = changeDescribeAfter == null ? null : changeDescribeAfter.trim();
+    }
+
+    public String getFile() {
+        return file;
+    }
+
+    public void setFile(String file) {
+        this.file = file == null ? null : file.trim();
     }
 
     public Date getCommitTime() {
