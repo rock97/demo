@@ -12,9 +12,9 @@
             </commentGenerator>
 
             <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                            connectionURL="jdbc:mysql://mysql.dev1.mobike.io:3306/mbk_mola_basic"
-                            userId="mobike001"
-                            password="m0bike123"/>
+                            connectionURL="xxx"
+                            userId="xxx"
+                            password="xxx"/>
 
             <javaModelGenerator targetPackage="ctas.test.entity"
                                 targetProject="/Users/lizhihuamobike/java/spring-boot-demo/demo/src/main/java">
