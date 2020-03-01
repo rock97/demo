@@ -8,7 +8,7 @@
         <context id="my" targetRuntime="MyBatis3">
             <commentGenerator>
                 <property name="suppressDate" value="false"/>
-                <property name="suppressAllComments" value="true"/>
+                <property name="suppressAllComments" value="ture"/>
             </commentGenerator>
 
             <jdbcConnection driverClass="com.mysql.jdbc.Driver"
@@ -32,14 +32,15 @@
                 <property name="enableSubPackages" value="true"/>
             </javaClientGenerator>
 
-            <table tableName="mbk_hardware_development" domainObjectName="HardwareDevelopment"
+            <table tableName="mbk_dictionary" domainObjectName="Dictionary"
                             enableCountByExample="false" enableUpdateByExample="false"
                            enableDeleteByExample="false" enableSelectByExample="false"
                            selectByExampleQueryId="false"/>
-            <table tableName="mbk_hardware_development_ approve_log" domainObjectName="HardwareDevelopmentApproveLog"
+
+            <!--<table tableName="mbk_hardware_development_ approve_log" domainObjectName="HardwareDevelopmentApproveLog"
                     enableCountByExample="false" enableUpdateByExample="false"
                     enableDeleteByExample="false" enableSelectByExample="false"
-                    selectByExampleQueryId="false"/>
+                    selectByExampleQueryId="false"/>-->
 
 
         </context>
